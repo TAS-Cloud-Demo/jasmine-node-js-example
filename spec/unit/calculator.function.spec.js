@@ -32,7 +32,7 @@ describe("Calculator Functions", function() {
   
     it("should give the same value when adding zero", function() {
       let value = calc.add(3, 0);
-      expect(value).toBe(3);
+      expect(value).toBe(5);
     });
   
   });
