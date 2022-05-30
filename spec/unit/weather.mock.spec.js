@@ -6,6 +6,7 @@ const rewire = require('rewire');
 const sinon = require('sinon');
 
 
+
 // --------------------------------------------------------------------------------
 // Rewirings
 //
@@ -14,6 +15,7 @@ const sinon = require('sinon');
 // --------------------------------------------------------------------------------
 
 const weather = rewire('../../lib/weather');
+
 
 
 // --------------------------------------------------------------------------------
@@ -26,6 +28,7 @@ const weather = rewire('../../lib/weather');
 
 describe("WeatherCaller Class", function() {
 
+  
   // Test constants
   const dummyForecast = {"high": 42, "low": 26};
 
@@ -49,12 +52,16 @@ describe("WeatherCaller Class", function() {
     expect(Object.keys(weatherCaller.forecasts).length).toBe(0);
   });
 
+  
+  
   it("should get a forecast for a date and a zipcode", function() {
     // This simply verifies that the return value is correct
     let forecast = weatherCaller.getForecast(12, 25, 2017, 21047);
     expect(forecast).toEqual(dummyForecast);
   });
 
+  
+  
   it("should get a fresh forecast the first time", function() {
     // The inner function should be called and the value should be cached
     // Note the sequence of assertions, which guarantee safety
@@ -113,3 +120,12 @@ describe("WeatherCaller Class", function() {
   });
 
 });
+
+
+
+
+
+
+
+
+
